@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="input-container">
+    <label for="start">Start:</label>
+    <input type="number" id="start">
+    <label for="end">End:</label>
+    <input type="number" id="end">
+    <button onclick="showResults()">Get Primes</button>
+  </div>
+  <div class="result-container">
+    <div class="metrics">
+      <div class="metric">
+        <p>Time taken to run all instances of the function getPrimesInRange:</p>
+        <span id="timeAllInstances"></span>
+      </div>
+      <div class="metric">
+        <p>Time taken to determine if a single number is prime or not in front of each number checked:</p>
+        <span id="timeSingleCheck"></span>
+      </div>
+      <div class="metric">
+        <p>Time taken to determine if a number is prime or not in front of each number found prime:</p>
+        <span id="timePrimeCheck"></span>
+      </div>
+      <div class="metric">
+        <p>Average of 2.b and 2.c for the given range:</p>
+        <span id="averageTime"></span>
+      </div>
+    </div>
+    <button onclick="showDetails()">Details</button>
+  </div>
+
+  <!-- Popup for showing details -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <span onclick="closePopup()" class="close-popup-button">&times;</span>
+      </div>
+      <div class="tab">
+        <button class="tablink" onclick="openTab('timeSingleCheckTab', this)">2.b Time</button>
+        <button class="tablink" onclick="openTab('timePrimeCheckTab', this)">2.c Time</button>
+      </div>
+      <div id="timeSingleCheckTab" class="tabcontent">
+        <h3>2.b Time</h3>
+        <table>
+          <tr>
+            <th>Number</th>
+            <th>Time (ms)</th>
+          </tr>
+        </table>
+      </div>
+      <div id="timePrimeCheckTab" class="tabcontent">
+        <h3>2.c Time</h3>
+        <table>
+          <tr>
+            <th>Prime Number</th>
+            <th>Time (ms)</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
